@@ -55,4 +55,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # scope '/api' do
+  #     get '/' => 'api#index'
+  #     post '/' => 'api#create'
+  #   end
+  namespace :api, path: '/', constraints: {subdomain: 'api'} do
+  resources :badges
+  end
 end
