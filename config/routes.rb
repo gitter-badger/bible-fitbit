@@ -59,17 +59,7 @@ Rails.application.routes.draw do
   #     get '/' => 'api#index'
   #     post '/' => 'api#create'
   #   end
-
-
   namespace :api, path: '/', constraints: {subdomain: 'api'} do
-  # resources :badges
-  # devise_for :users, :controllers => { :sessions => "api/sessions" }
-  # devise_for :users
+  resources :badges
   end
-
-  #scope for devise controllers
-  scope '/api' do
-    devise_for :users
-  end
-
 end
